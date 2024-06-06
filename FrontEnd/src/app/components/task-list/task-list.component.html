@@ -1,0 +1,15 @@
+<h2>Task List</h2>
+<ul>
+  <li *ngFor="let task of tasks">
+    <h3>{{ task.title }}</h3>
+    <p>{{ task.description }}</p>
+    <p>{{ task.createdAt | date }}</p>
+    <p>
+      <input type="checkbox" [checked]="task.completed" (change)="toggleComplete(task)">
+      Completed
+    </p>
+    <button (click)="deleteTask(task.id)">Delete</button>
+    <button [routerLink]="['/edit', task.id]">Edit</button>
+  </li>
+</ul>
+<button [routerLink]="['/add']">Add New Task</button>

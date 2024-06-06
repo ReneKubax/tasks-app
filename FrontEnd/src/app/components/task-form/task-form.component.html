@@ -1,0 +1,10 @@
+<h2>{{ isEdit ? 'Edit Task' : 'Add New Task' }}</h2>
+<form (ngSubmit)="saveTask()">
+  <label for="title">Title:</label>
+  <input id="title" [(ngModel)]="task.title" name="title" required>
+
+  <label for="description">Description:</label>
+  <input id="description" [(ngModel)]="task.description" name="description" required>
+
+  <button type="submit">{{ isEdit ? 'Update Task' : 'Add Task' }}</button>
+</form>
