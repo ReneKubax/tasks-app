@@ -1,10 +1,14 @@
-<h2>{{ isEdit ? 'Edit Task' : 'Add New Task' }}</h2>
-<form (ngSubmit)="saveTask()">
-  <label for="title">Title:</label>
-  <input id="title" [(ngModel)]="task.title" name="title" required>
-
-  <label for="description">Description:</label>
-  <input id="description" [(ngModel)]="task.description" name="description" required>
-
-  <button type="submit">{{ isEdit ? 'Update Task' : 'Add Task' }}</button>
-</form>
+<mat-card>
+  <h2>{{ isEdit ? 'Edit Task' : 'Add New Task' }}</h2>
+  <form (ngSubmit)="saveTask()">
+    <mat-form-field appearance="fill">
+      <mat-label>Title</mat-label>
+      <input matInput [(ngModel)]="task.title" name="title" required>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Description</mat-label>
+      <textarea matInput [(ngModel)]="task.description" name="description" required></textarea>
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit">{{ isEdit ? 'Update Task' : 'Add Task' }}</button>
+  </form>
+</mat-card>

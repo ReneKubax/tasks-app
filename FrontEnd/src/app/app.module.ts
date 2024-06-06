@@ -8,6 +8,15 @@ import { TaskFormComponent} from './components/task-form/task-form.component';
 import { TaskListComponent } from './components/task-list/task-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NavigationComponent } from './components/navigation/navigation.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatCardModule } from '@angular/material/card';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -19,9 +28,18 @@ import { NavigationComponent } from './components/navigation/navigation.componen
   ],
   imports: [
     BrowserModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatInputModule,
+    MatCardModule,
+    MatCheckboxModule,
+    MatIconModule,
+    MatListModule,
+    MatSnackBarModule,
     HttpClientModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

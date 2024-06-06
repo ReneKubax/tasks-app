@@ -22,7 +22,7 @@ export class TaskListComponent implements OnInit {
     });
   }
 
-  deleteTask(taskId?: string): void {  // Allow taskId to be optional
+  deleteTask(taskId?: string): void {
     if (taskId) {
       this.taskService.deleteTask(taskId).subscribe(() => {
         this.loadTasks();

@@ -1,6 +1,10 @@
-<h2>Login</h2>
-<form (ngSubmit)="login()">
-  <label for="email">Email:</label>
-  <input id="email" [(ngModel)]="email" name="email" type="email" required>
-  <button type="submit">Login</button>
-</form>
+<mat-card>
+  <h2>Login</h2>
+  <form (ngSubmit)="login()">
+    <mat-form-field appearance="fill">
+      <mat-label>Email</mat-label>
+      <input matInput [(ngModel)]="email" name="email" type="email" required>
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit">Login</button>
+  </form>
+</mat-card>

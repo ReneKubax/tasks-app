@@ -1,0 +1,16 @@
+.task-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+}
+
+.task-card {
+  width: 300px;
+}
+
+.add-button {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+}
