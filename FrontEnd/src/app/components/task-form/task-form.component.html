@@ -9,6 +9,9 @@
       <mat-label>Description</mat-label>
       <textarea matInput [(ngModel)]="task.description" name="description" required></textarea>
     </mat-form-field>
+    <mat-checkbox [(ngModel)]="task.completed" name="completed">
+      Completed
+    </mat-checkbox>
     <button mat-raised-button color="primary" type="submit">{{ isEdit ? 'Update Task' : 'Add Task' }}</button>
   </form>
 </mat-card>
