@@ -11,11 +11,8 @@ import { Task } from '../models/tasks';
  */
 const getAllTasks = async (req: Request, res: Response) => {
   try {
-    const userEmail = req.user?.email; 
-    if (!userEmail) {
-      return res.status(401).json({ message: 'Unauthorized' });
-    }
-    const tasks = await getTasksByUser(userEmail);
+    const userEmail = req.user?.email;
+    const tasks = await getTasksByUser(userEmail!);
     res.status(200).json(tasks);
   } catch (error) {
     if (error instanceof Error) {
@@ -35,10 +32,7 @@ const getAllTasks = async (req: Request, res: Response) => {
  */
 const createTask = async (req: Request, res: Response) => {
   try {
-    const userEmail = req.user?.email; 
-    if (!userEmail) {
-      return res.status(401).json({ message: 'Unauthorized' });
-    }
+    const userEmail = req.user?.email;
     const task: Task = { ...req.body, userEmail };
     await addTask(task);
     res.status(201).json({ message: 'Task created successfully' });
