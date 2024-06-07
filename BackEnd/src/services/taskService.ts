@@ -8,7 +8,7 @@ import { Task } from '../models/tasks';
  * @return {Promise<Task[]>} A promise that resolves to an array of Task objects.
  */
 const getTasksByUser = async (email: string): Promise<Task[]> => {
-  const tasksSnapshot = await db.collection('tasks').where('userEmail', '==', email).get();
+  const tasksSnapshot = await db.collection('tasks').get();
   return tasksSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() } as Task));
 };
 
