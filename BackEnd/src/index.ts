@@ -1,6 +1,5 @@
-import * as functions from 'firebase-functions';
 import express from 'express';
-import cors from 'cors';
+import cors, { CorsOptionsDelegate } from 'cors';
 import swaggerJSDoc from 'swagger-jsdoc';
 import swaggerUi from 'swagger-ui-express';
 import taskRoutes from './routes/taskRoutes';
@@ -17,9 +16,20 @@ const swaggerDefinition = {
   },
   servers: [
     {
-      url: 'http://localhost:5000',
+      url: process.env.PORT || 'http://localhost:5000',
     },
   ],
+};
+
+const allowedOrigins = ['http://localhost:4200', 'https://task-app-rene.netlify.app'];
+
+const corsOptions: CorsOptionsDelegate = (req, callback) => {
+  const origin = req.headers.origin;
+  if (!origin || allowedOrigins.includes(origin)) {
+    callback(null, { origin: true });
+  } else {
+    callback(new Error('Not allowed by CORS'));
+  }
 };
 
 const options = {
@@ -33,9 +43,9 @@ console.log('Inicializando servidor...');
 
 const app = express();
 
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(express.json());
-app.use(authMiddleware); 
+app.use(authMiddleware);
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 app.use('/api', taskRoutes);
 app.use('/api', userRoutes);
@@ -48,4 +58,4 @@ app.listen(port, () => {
   console.log(`Servidor escuchando en puerto ${port}`);
 });
 
-exports.api = functions.https.onRequest(app);
+export default app;
