@@ -2,26 +2,45 @@
 
 ## Angular version 15
 
-
 🌲 Scaffold Project
 
 - 📄 `README.md` (Guide to use this project)
-- 📁 `app` (In this folder we have all components of this application)
+- 📁 `app` (In this folder we have all components and services of this application)
+  - 📁 `components`
+    - 📁 `login`
+      - 📄 `login.component.ts`
+      - 📄 `login.component.html`
+      - 📄 `login.component.scss`
+    - 📁 `task-form`
+      - 📄 `task-form.component.ts`
+      - 📄 `task-form.component.html`
+      - 📄 `task-form.component.scss`
+    - 📁 `task-list`
+      - 📄 `task-list.component.ts`
+      - 📄 `task-list.component.html`
+      - 📄 `task-list.component.scss`
+  - 📁 `services`
+    - 📄 `task.service.ts`
+    - 📄 `user.service.ts`
+  - 📄 `app-routing.module.ts` (In this file we have the configuration of the routes)
+  - 📄 `app.component.ts`
+  - 📄 `app.component.html`
+  - 📄 `app.component.scss`
+  - 📄 `app.module.ts`
 - 📁 `dist` (In this folder we have the compiled code)
-- 📁 `Enviroments` (files with the Api Urls)
+- 📁 `environments` (files with the Api Urls)
+  - 📄 `environment.ts` (Development environment)
+  - 📄 `environment.prod.ts` (Production environment)
 - 📁 `node_modules`
 - 📄 `angular.json` (In this file we have the configuration of the project)
 - 📄 `package-lock.json`
 - 📄 `package.json` (In this file we have the dependencies of the project)
-- 📄 `tsconfig.app.json` (In this file we have the configuration of the typescript)
+- 📄 `tsconfig.app.json` (In this file we have the configuration of TypeScript)
 
 ## ✅ Code Conventions
 
-
 - CLEAN CODE principles
-
 - Documentation of functions and correct naming of functions and variables.
-
 - Mandatory use of camel case convention
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
