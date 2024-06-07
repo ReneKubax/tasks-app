@@ -3,16 +3,15 @@ import { getTasksByUser, addTask, updateTask, deleteTask } from '../services/tas
 import { Task } from '../models/tasks';
 
 /**
- * Retrieves all tasks associated with the authenticated user.
+ * Retrieves all tasks.
  *
- * @param {Request} req - The request object containing the user information.
- * @param {Response} res - The response object used to send the result of the operation.
+ * @param {Request} req - The request object.
+ * @param {Response} res - The response object.
  * @return {Promise<void>} - A promise that resolves when the tasks are retrieved successfully or an error message is sent.
  */
 const getAllTasks = async (req: Request, res: Response) => {
   try {
-    const userEmail = req.user?.email;
-    const tasks = await getTasksByUser(userEmail!);
+    const tasks = await getTasksByUser(''); // Pasar un string vacío para obtener todas las tareas
     res.status(200).json(tasks);
   } catch (error) {
     if (error instanceof Error) {
@@ -24,16 +23,15 @@ const getAllTasks = async (req: Request, res: Response) => {
 };
 
 /**
- * Creates a new task with the provided data and associates it with the authenticated user.
+ * Creates a new task with the provided data.
  *
- * @param {Request} req - The request object containing the task data and the user information.
+ * @param {Request} req - The request object containing the task data.
  * @param {Response} res - The response object used to send the result of the operation.
  * @return {Promise<void>} - A promise that resolves when the task is created successfully or an error message is sent.
  */
 const createTask = async (req: Request, res: Response) => {
   try {
-    const userEmail = req.user?.email;
-    const task: Task = { ...req.body, userEmail };
+    const task: Task = req.body;
     await addTask(task);
     res.status(201).json({ message: 'Task created successfully' });
   } catch (error) {
@@ -60,7 +58,7 @@ const updateTaskById = async (req: Request, res: Response) => {
     res.status(200).json({ message: 'Task updated successfully' });
   } catch (error) {
     if (error instanceof Error) {
-      res.status (500).json({ error: error.message });
+      res.status(500).json({ error: error.message });
     } else {
       res.status(500).json({ error: 'An unknown error occurred' });
     }
