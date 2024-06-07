@@ -44,6 +44,10 @@ export class TaskFormComponent implements OnInit {
     }
   }
 
+  goBack(): void {
+    this.router.navigate(['/tasks']);
+  }
+
   saveTask(): void {
     if (this.taskForm.invalid) {
       return;

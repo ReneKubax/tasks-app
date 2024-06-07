@@ -20,6 +20,8 @@
     <mat-checkbox formControlName="completed">
       Completed
     </mat-checkbox>
+
     <button mat-raised-button color="primary" type="submit" [disabled]="!taskForm.valid">{{ isEdit ? 'Update Task' : 'Add Task' }}</button>
+    <button mat-raised-button color="warn" type="button" (click)="goBack()">Back</button> <!-- Botón de regreso -->
   </form>
 </mat-card>
