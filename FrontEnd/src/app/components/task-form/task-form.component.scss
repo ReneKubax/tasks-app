@@ -1,0 +1,21 @@
+.task-form-container {
+  margin-top: 80px;
+}
+
+.task-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  mat-form-field {
+    width: 100%;
+  }
+
+  mat-checkbox {
+    margin: 8px 0;
+  }
+
+  button {
+    align-self: flex-end;
+  }
+}

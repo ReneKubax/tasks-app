@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TaskService, Task } from '../../services/task.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-task-form',
@@ -15,12 +16,20 @@ export class TaskFormComponent implements OnInit {
     completed: false
   };
   isEdit = false;
+  taskForm: FormGroup;
 
   constructor(
+    private fb: FormBuilder,
     private taskService: TaskService,
     private route: ActivatedRoute,
     private router: Router
-  ) {}
+  ) {
+    this.taskForm = this.fb.group({
+      title: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(100)]],
+      description: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(500)]],
+      completed: [false]
+    });
+  }
 
   ngOnInit(): void {
     const taskId = this.route.snapshot.paramMap.get('id');

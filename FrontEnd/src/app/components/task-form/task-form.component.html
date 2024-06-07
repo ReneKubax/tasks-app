@@ -1,17 +1,25 @@
-<mat-card>
+<mat-card class="task-form-container">
   <h2>{{ isEdit ? 'Edit Task' : 'Add New Task' }}</h2>
-  <form (ngSubmit)="saveTask()">
+  <form [formGroup]="taskForm" (ngSubmit)="saveTask()" class="task-form">
     <mat-form-field appearance="fill">
       <mat-label>Title</mat-label>
-      <input matInput [(ngModel)]="task.title" name="title" required>
+      <input matInput formControlName="title" required>
+      <mat-error *ngIf="taskForm.get('title')?.hasError('required')">Title is required</mat-error>
+      <mat-error *ngIf="taskForm.get('title')?.hasError('minlength')">Title must be at least 3 characters long</mat-error>
+      <mat-error *ngIf="taskForm.get('title')?.hasError('maxlength')">Title cannot exceed 100 characters</mat-error>
     </mat-form-field>
+
     <mat-form-field appearance="fill">
       <mat-label>Description</mat-label>
-      <textarea matInput [(ngModel)]="task.description" name="description" required></textarea>
+      <textarea matInput formControlName="description" required></textarea>
+      <mat-error *ngIf="taskForm.get('description')?.hasError('required')">Description is required</mat-error>
+      <mat-error *ngIf="taskForm.get('description')?.hasError('minlength')">Description must be at least 10 characters long</mat-error>
+      <mat-error *ngIf="taskForm.get('description')?.hasError('maxlength')">Description cannot exceed 500 characters</mat-error>
     </mat-form-field>
-    <mat-checkbox [(ngModel)]="task.completed" name="completed">
+
+    <mat-checkbox formControlName="completed">
       Completed
     </mat-checkbox>
-    <button mat-raised-button color="primary" type="submit">{{ isEdit ? 'Update Task' : 'Add Task' }}</button>
+    <button mat-raised-button color="primary" type="submit" [disabled]="!taskForm.valid">{{ isEdit ? 'Update Task' : 'Add Task' }}</button>
   </form>
 </mat-card>

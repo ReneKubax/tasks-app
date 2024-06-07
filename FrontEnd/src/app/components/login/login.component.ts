@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -8,19 +9,33 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
-  email: string = '';
+  loginForm: FormGroup;
 
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(
+    private fb: FormBuilder,
+    private http: HttpClient,
+    private router: Router
+  ) {
+    this.loginForm = this.fb.group({
+      email: ['', [Validators.required, Validators.email]]
+    });
+  }
 
   login(): void {
-    this.http.get(`http://localhost:5000/api/users/${this.email}`).subscribe(
+    if (this.loginForm.invalid) {
+      return;
+    }
+
+    const email = this.loginForm.value.email;
+
+    this.http.get(`http://localhost:5000/api/users/${email}`).subscribe(
       (user) => {
         this.router.navigate(['/tasks']);
       },
       (error) => {
         if (error.status === 404) {
           if (confirm('User not found. Would you like to create a new user?')) {
-            this.http.post('http://localhost:5000/api/users', { email: this.email }).subscribe(
+            this.http.post('http://localhost:5000/api/users', { email }).subscribe(
               () => {
                 this.router.navigate(['/tasks']);
               }
