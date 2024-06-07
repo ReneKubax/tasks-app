@@ -1,27 +1,46 @@
-# Frontend
+# Frontend Tasks App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.0.
+## Angular version 15
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+🌲 Scaffold Project
 
-## Code scaffolding
+- 📄 `README.md` (Guide to use this project)
+- 📁 `app` (In this folder we have all components of this application)
+- 📁 `dist` (In this folder we have the compiled code)
+- 📁 `Enviroments` (files with the Api Urls)
+- 📁 `node_modules`
+- 📄 `angular.json` (In this file we have the configuration of the project)
+- 📄 `package-lock.json`
+- 📄 `package.json` (In this file we have the dependencies of the project)
+- 📄 `tsconfig.app.json` (In this file we have the configuration of the typescript)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## ✅ Code Conventions
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- CLEAN CODE principles
 
-## Running unit tests
+- Documentation of functions and correct naming of functions and variables.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- Mandatory use of camel case convention
 
-## Running end-to-end tests
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+<!-- BROWSER SUPPORT -->
 
-## Further help
+## 🌏 Browser Support
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+<img src="https://user-images.githubusercontent.com/1215767/34348387-a2e64588-ea4d-11e7-8267-a43365103afe.png" alt="Chrome" width="16px" height="16px" /> Chrome | <img src="https://user-images.githubusercontent.com/1215767/34348380-93e77ae8-ea4d-11e7-8696-9a989ddbbbf5.png" alt="Edge" width="16px" height="16px" /> Edge |
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- PROJECT MEMBERS -->
+
+## 🧑🏻‍💻🧑🏻‍💻 Project Members
+
+<table>
+  <tr>
+     <td align="center"><a href="https://github.com/ReneKubax"><img src="https://lh7-us.googleusercontent.com/cdumdpS82APfMtRociVe7nIRT83FOb7p31PE3ltCx7turBdf8FDY-bFPDd3gFEC0cD0G3vo96kARseIBAVzx_qXT-g6luouj5OrR-moSkB6ZMeaU3pn81g0VpJ72H8m8wwk7PLODE81LHOQRE9FGcYX1Sw=s2048" width="100px;" height="auto" alt="Rene Fuentes"/><br /><sub><b>Rene Fuentes</b></sub></a></td>
+      
+  </tr>
+</table>
