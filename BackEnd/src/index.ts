@@ -47,7 +47,7 @@ app.use(cors(corsOptions));
 app.use(express.json());
 app.use(authMiddleware);
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
-app.use('/api', taskRoutes);
+app.use('/api/tasks', authMiddleware, taskRoutes)
 app.use('/api', userRoutes);
 
 app.use(errorHandler);
