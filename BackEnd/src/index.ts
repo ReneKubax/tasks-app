@@ -46,7 +46,7 @@ const app = express();
 app.use(cors(corsOptions));
 app.use(express.json());
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
-app.use('/api/tasks',taskRoutes)
+app.use('/api',taskRoutes)
 app.use('/api', userRoutes);
 
 app.use(errorHandler);

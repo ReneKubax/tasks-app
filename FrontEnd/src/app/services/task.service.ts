@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from 'src/enviroments/enviroment';
 
 export interface Task {
   id?: string;
@@ -15,7 +16,7 @@ export interface Task {
   providedIn: 'root'
 })
 export class TaskService {
-  private apiUrl = 'http://localhost:5000/api/tasks';
+  private apiUrl = environment.apiUrl + '/tasks';
 
   constructor(private http: HttpClient) { }
   /**
@@ -54,7 +55,7 @@ export class TaskService {
  */
   addTask(task: Task): Observable<Task> {
     const headers = new HttpHeaders({ 'x-user-email': this.getUserEmail() });
-    task.userEmail = this.getUserEmail(); // Asegúrate de que la tarea tenga el email del usuario
+    task.userEmail = this.getUserEmail();
     return this.http.post<Task>(this.apiUrl, task, { headers });
   }
 /**
