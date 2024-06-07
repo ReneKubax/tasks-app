@@ -18,7 +18,7 @@ export class TaskListComponent implements OnInit {
 
   loadTasks(): void {
     this.taskService.getTasks().subscribe((tasks) => {
-      this.tasks = tasks;
+      this.tasks = tasks.filter(task => task.userEmail === this.getUserEmail());
     });
   }
 
@@ -43,5 +43,9 @@ export class TaskListComponent implements OnInit {
     if (taskId) {
       this.router.navigate(['/edit', taskId]);
     }
+  }
+
+  private getUserEmail(): string {
+    return localStorage.getItem('userEmail') || '';
   }
 }

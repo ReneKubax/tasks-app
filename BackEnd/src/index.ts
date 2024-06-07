@@ -6,6 +6,7 @@ import swaggerUi from 'swagger-ui-express';
 import taskRoutes from './routes/taskRoutes';
 import userRoutes from './routes/userRoutes';
 import { errorHandler } from './middleware/errorHandler';
+import authMiddleware from './middleware/authMiddleware';
 
 const swaggerDefinition = {
   openapi: '3.0.0',
@@ -34,7 +35,7 @@ const app = express();
 
 app.use(cors({ origin: true }));
 app.use(express.json());
-
+app.use(authMiddleware); 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 app.use('/api', taskRoutes);
 app.use('/api', userRoutes);

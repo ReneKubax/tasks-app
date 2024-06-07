@@ -39,19 +39,26 @@ export class TaskFormComponent implements OnInit {
       this.taskService.getTask(taskId).subscribe((task) => {
         this.task = task;
         this.task.id = taskId;
+        this.taskForm.patchValue(this.task); // Sincroniza el formulario con los datos de la tarea
       });
     }
   }
 
   saveTask(): void {
+    if (this.taskForm.invalid) {
+      return;
+    }
+
+    this.task = { ...this.task, ...this.taskForm.value }; // Actualiza el modelo de la tarea con los valores del formulario
+
     if (this.isEdit && this.task.id) {
       this.taskService.updateTask(this.task.id, this.task).subscribe(() => {
-        this.router.navigate(['/']);
+        this.router.navigate(['/tasks']);
       });
     } else {
       const { id, ...taskWithoutId } = this.task;
       this.taskService.addTask(taskWithoutId as Task).subscribe(() => {
-        this.router.navigate(['/']);
+        this.router.navigate(['/tasks']);
       });
     }
   }

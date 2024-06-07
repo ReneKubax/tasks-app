@@ -7,10 +7,12 @@ const router = Router();
  * @swagger
  * /tasks:
  *   get:
- *     summary: Get all tasks
+ *     summary: Get all tasks for the logged-in user
  *     responses:
  *       200:
  *         description: List of tasks
+ *       500:
+ *         description: Server error
  */
 router.get('/tasks', getAllTasks);
 
@@ -25,16 +27,6 @@ router.get('/tasks', getAllTasks);
  *         application/json:
  *           schema:
  *             type: object
- *             properties:
- *               title:
- *                 type: string
- *               description:
- *                 type: string
- *               createdAt:
- *                 type: string
- *                 format: date-time
- *               completed:
- *                 type: boolean
  *     responses:
  *       201:
  *         description: Task created successfully
@@ -47,12 +39,12 @@ router.post('/tasks', createTask);
  * @swagger
  * /tasks/{taskId}:
  *   put:
- *     summary: Update an existing task
+ *     summary: Update a task by ID
  *     parameters:
  *       - in: path
  *         name: taskId
  *         required: true
- *         description: The ID of the task to update
+ *         description: The ID of the task
  *         schema:
  *           type: string
  *     requestBody:
@@ -61,13 +53,6 @@ router.post('/tasks', createTask);
  *         application/json:
  *           schema:
  *             type: object
- *             properties:
- *               title:
- *                 type: string
- *               description:
- *                 type: string
- *               completed:
- *                 type: boolean
  *     responses:
  *       200:
  *         description: Task updated successfully
@@ -80,12 +65,12 @@ router.put('/tasks/:taskId', updateTaskById);
  * @swagger
  * /tasks/{taskId}:
  *   delete:
- *     summary: Delete an existing task
+ *     summary: Delete a task by ID
  *     parameters:
  *       - in: path
  *         name: taskId
  *         required: true
- *         description: The ID of the task to delete
+ *         description: The ID of the task
  *         schema:
  *           type: string
  *     responses:

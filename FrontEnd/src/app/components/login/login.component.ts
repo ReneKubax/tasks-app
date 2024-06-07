@@ -30,6 +30,7 @@ export class LoginComponent {
 
     this.http.get(`http://localhost:5000/api/users/${email}`).subscribe(
       (user) => {
+        localStorage.setItem('userEmail', email); // Guarda el email en localStorage
         this.router.navigate(['/tasks']);
       },
       (error) => {
@@ -37,6 +38,7 @@ export class LoginComponent {
           if (confirm('User not found. Would you like to create a new user?')) {
             this.http.post('http://localhost:5000/api/users', { email }).subscribe(
               () => {
+                localStorage.setItem('userEmail', email);
                 this.router.navigate(['/tasks']);
               }
             );

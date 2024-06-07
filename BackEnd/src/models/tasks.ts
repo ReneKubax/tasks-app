@@ -4,6 +4,7 @@ interface Task {
     description: string;
     createdAt: FirebaseFirestore.Timestamp;
     completed: boolean;
+    userEmail: string;
   }
   
   export { Task };

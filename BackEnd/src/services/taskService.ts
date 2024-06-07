@@ -1,8 +1,8 @@
 import { db } from '../firebaseConfig';
 import { Task } from '../models/tasks';
 
-const getTasks = async (): Promise<Task[]> => {
-  const tasksSnapshot = await db.collection('tasks').get();
+const getTasksByUser = async (email: string): Promise<Task[]> => {
+  const tasksSnapshot = await db.collection('tasks').where('userEmail', '==', email).get();
   return tasksSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() } as Task));
 };
 
@@ -18,4 +18,4 @@ const deleteTask = async (taskId: string): Promise<void> => {
   await db.collection('tasks').doc(taskId).delete();
 };
 
-export { getTasks, addTask, updateTask, deleteTask };
+export { getTasksByUser, addTask, updateTask, deleteTask };
