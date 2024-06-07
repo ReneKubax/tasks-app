@@ -52,7 +52,7 @@ app.use('/api', userRoutes);
 
 app.use(errorHandler);
 
-const port = 5000;
+const port = process.env.PORT || 5000;
 
 app.listen(port, () => {
   console.log(`Servidor escuchando en puerto ${port}`);
