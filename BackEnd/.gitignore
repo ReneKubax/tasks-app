@@ -18,6 +18,10 @@ yarn-error.log*
 .env
 
 
+# Firebase related files
+.firebase/
+.firebaserc
+
 # IDE and editor related files
 .vscode/
 .idea/
