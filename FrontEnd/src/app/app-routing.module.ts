@@ -10,7 +10,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'tasks', component: TaskListComponent },
   { path: 'add', component: TaskFormComponent },
-  { path: 'edit/:id', component: TaskFormComponent }
+  { path: 'edit/:id', component: TaskFormComponent },
+  { path: '**', redirectTo: '/login' }
 ];
 
 @NgModule({
