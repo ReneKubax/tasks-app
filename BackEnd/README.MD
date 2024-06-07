@@ -29,6 +29,15 @@
 - 📄 `package.json` (In this file we have the dependencies of the project)
 - 📄 `tsconfig.json` (In this file we have the configuration of TypeScript)
 
+<!-- Images -->
+
+## 📷 Firebase images
+
+![fire](https://github.com/ReneKubax/tasks-app/assets/97212849/775acc82-9c8e-4f9f-a3c6-187dab9a417f)
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 ## ✅ Code Conventions
 
 - CLEAN CODE principles
