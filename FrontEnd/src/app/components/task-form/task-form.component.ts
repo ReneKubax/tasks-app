@@ -39,7 +39,7 @@ export class TaskFormComponent implements OnInit {
       this.taskService.getTask(taskId).subscribe((task) => {
         this.task = task;
         this.task.id = taskId;
-        this.taskForm.patchValue(this.task); // Sincroniza el formulario con los datos de la tarea
+        this.taskForm.patchValue(this.task);
       });
     }
   }
@@ -63,7 +63,7 @@ export class TaskFormComponent implements OnInit {
       return;
     }
 
-    this.task = { ...this.task, ...this.taskForm.value }; // Actualiza el modelo de la tarea con los valores del formulario
+    this.task = { ...this.task, ...this.taskForm.value };
 
     if (this.isEdit && this.task.id) {
       this.taskService.updateTask(this.task.id, this.task).subscribe(() => {

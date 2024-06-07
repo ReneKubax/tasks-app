@@ -67,6 +67,7 @@ export class TaskService {
  */
   updateTask(id: string, task: Partial<Task>): Observable<Task> {
     const headers = new HttpHeaders({ 'x-user-email': this.getUserEmail() });
+    task.userEmail = this.getUserEmail();
     return this.http.put<Task>(`${this.apiUrl}/${id}`, task, { headers });
   }
   /**
