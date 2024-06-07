@@ -2,9 +2,16 @@ import { Request, Response } from 'express';
 import { getTasksByUser, addTask, updateTask, deleteTask } from '../services/taskService';
 import { Task } from '../models/tasks';
 
+/**
+ * Retrieves all tasks associated with the authenticated user.
+ *
+ * @param {Request} req - The request object containing the user information.
+ * @param {Response} res - The response object used to send the result of the operation.
+ * @return {Promise<void>} - A promise that resolves when the tasks are retrieved successfully or an error message is sent.
+ */
 const getAllTasks = async (req: Request, res: Response) => {
   try {
-    const userEmail = req.user?.email; // Suponiendo que se usa algún middleware de autenticación que agrega el usuario al request
+    const userEmail = req.user?.email; 
     if (!userEmail) {
       return res.status(401).json({ message: 'Unauthorized' });
     }
@@ -19,9 +26,16 @@ const getAllTasks = async (req: Request, res: Response) => {
   }
 };
 
+/**
+ * Creates a new task with the provided data and associates it with the authenticated user.
+ *
+ * @param {Request} req - The request object containing the task data and the user information.
+ * @param {Response} res - The response object used to send the result of the operation.
+ * @return {Promise<void>} - A promise that resolves when the task is created successfully or an error message is sent.
+ */
 const createTask = async (req: Request, res: Response) => {
   try {
-    const userEmail = req.user?.email; // Suponiendo que se usa algún middleware de autenticación que agrega el usuario al request
+    const userEmail = req.user?.email; 
     if (!userEmail) {
       return res.status(401).json({ message: 'Unauthorized' });
     }
@@ -37,6 +51,13 @@ const createTask = async (req: Request, res: Response) => {
   }
 };
 
+/**
+ * Updates a task by its ID.
+ *
+ * @param {Request} req - The request object containing the task ID in the params.
+ * @param {Response} res - The response object used to send the result of the operation.
+ * @return {Promise<void>} - A promise that resolves when the task is updated successfully or an error message is sent.
+ */
 const updateTaskById = async (req: Request, res: Response) => {
   try {
     const taskId = req.params.taskId;
@@ -52,6 +73,13 @@ const updateTaskById = async (req: Request, res: Response) => {
   }
 };
 
+/**
+ * Deletes a task by its ID.
+ *
+ * @param {Request} req - The request object containing the task ID in the params.
+ * @param {Response} res - The response object used to send the result of the operation.
+ * @return {Promise<void>} - A promise that resolves when the task is deleted successfully or an error message is sent.
+ */
 const deleteTaskById = async (req: Request, res: Response) => {
   try {
     const taskId = req.params.taskId;

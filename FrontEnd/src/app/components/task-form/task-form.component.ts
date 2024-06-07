@@ -43,11 +43,21 @@ export class TaskFormComponent implements OnInit {
       });
     }
   }
-
+  /**
+   * Navigates back to the '/tasks' route.
+   *
+   * @return {void} This function does not return anything.
+   */
   goBack(): void {
     this.router.navigate(['/tasks']);
   }
 
+    /**
+   * Saves the task by updating the task model with the form values and either
+   * updating the task if it is in edit mode or adding a new task if it is not.
+   *
+   * @return {void} This function does not return anything.
+   */
   saveTask(): void {
     if (this.taskForm.invalid) {
       return;

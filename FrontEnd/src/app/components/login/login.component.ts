@@ -21,6 +21,14 @@ export class LoginComponent {
     });
   }
 
+  /**
+ * Logs in the user by making an HTTP GET request to the server to retrieve the user information based on the provided email.
+ * If the user is found, it stores the email in the local storage and navigates to the '/tasks' route.
+ * If the user is not found, it prompts the user to create a new user. If the user chooses to create a new user,
+ * it makes an HTTP POST request to the server to create the user with the provided email.
+ *
+ * @return {void} This function does not return a value.
+ */
   login(): void {
     if (this.loginForm.invalid) {
       return;

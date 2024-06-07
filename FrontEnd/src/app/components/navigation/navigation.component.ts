@@ -12,11 +12,16 @@ export class NavigationComponent implements OnInit {
   constructor(private router: Router) {}
 
   ngOnInit(): void {
-    this.isLoggedIn = !!localStorage.getItem('userEmail'); // Verifica si el usuario está logeado
+    this.isLoggedIn = !!localStorage.getItem('userEmail');
   }
 
+    /**
+   * Logs out the user by removing the 'userEmail' from the localStorage and navigating to the '/login' route.
+   *
+   * @return {void} This function does not return anything.
+   */
   logout(): void {
-    localStorage.removeItem('userEmail'); // Elimina el email del localStorage al hacer logout
+    localStorage.removeItem('userEmail');
     this.router.navigate(['/login']);
   }
 }
