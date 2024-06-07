@@ -61,17 +61,7 @@ Below is a series of commands to run each application and its url
 
 ## 📷 Images
 
-![video](https://github.com/ReneKubax/Gadget-Zone--Eccomerce/assets/97212849/0e448b05-6c4a-4ab6-9d41-81d2afbbef0a)
-
-![image](https://github.com/ReneKubax/Gadget-Zone--Eccomerce/assets/97212849/e154604b-365c-434d-a9c8-21caf96a117c)
-
-![image](https://github.com/ReneKubax/Gadget-Zone--Eccomerce/assets/97212849/955ef9df-e878-4412-b6e3-df63800a04d0)
-
-![image](https://github.com/ReneKubax/Gadget-Zone--Eccomerce/assets/97212849/b65d6486-42c2-4110-8742-3fa4ee49d33a)
-
-![image](https://github.com/ReneKubax/Gadget-Zone--Eccomerce/assets/97212849/9665506c-a944-4edc-aabb-4ae056eb57bc)
-
-
+https://github.com/ReneKubax/tasks-app/assets/97212849/fe756ba0-5665-4b78-b018-c0758bb68553
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
