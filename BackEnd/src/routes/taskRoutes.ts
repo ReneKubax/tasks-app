@@ -14,7 +14,7 @@ const router = Router();
  *       500:
  *         description: Server error
  */
-router.get('/tasks', getAllTasks);
+router.get('/', getAllTasks);
 
 /**
  * @swagger
@@ -33,7 +33,7 @@ router.get('/tasks', getAllTasks);
  *       500:
  *         description: Server error
  */
-router.post('/tasks', createTask);
+router.post('/', createTask);
 
 /**
  * @swagger
@@ -59,7 +59,7 @@ router.post('/tasks', createTask);
  *       500:
  *         description: Server error
  */
-router.put('/tasks/:taskId', updateTaskById);
+router.put('/:taskId', updateTaskById);
 
 /**
  * @swagger
@@ -79,6 +79,6 @@ router.put('/tasks/:taskId', updateTaskById);
  *       500:
  *         description: Server error
  */
-router.delete('/tasks/:taskId', deleteTaskById);
+router.delete('/:taskId', deleteTaskById);
 
 export default router;
