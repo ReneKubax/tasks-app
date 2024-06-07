@@ -35,6 +35,7 @@
 
 ![fire](https://github.com/ReneKubax/tasks-app/assets/97212849/775acc82-9c8e-4f9f-a3c6-187dab9a417f)
 
+![backend](https://github.com/ReneKubax/tasks-app/assets/97212849/b57afdf0-9fe8-405e-8ba9-fd04d03476cd)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
