@@ -9,7 +9,7 @@
 
 # Description
 
-Frontend side for Gadget Zone application responsive. 
+Full Stack App with Angular, Express and Firebase
 
 ## Built With
 
@@ -17,7 +17,10 @@ This project has been developed with the following technologies. Among them, the
 
 ### Libraries
 
-[![React-js][React-js.io]][React-url]
+[![Angular][Angular.io]][Angular-url]
+[![Node.js][Node.js.io]][Node.js-url]
+[![Express][Express.io]][Express-url]
+[![Firebase][Firebase.io]][Firebase-url]
 [![Sass][Sass.io]][Sass-url]
 
 
@@ -37,18 +40,19 @@ This project requires Node.js to execute its functionalities. We recommend using
 
 <!-- RUN PROJECT -->
 
-## 🚀 Run Project
+## 🚀 Run Projects
 
-1. Move to the appropriate directory: `cd gadget-zone`.<br />
+
+1. Move to the appropriate directory: `cd front end or cd backend`.<br />
 2. Run `npm i`.
-3. Run `npm start` (Default Application on PORT 3000).
+3. Run `npm start or ng serve` (Default Application).
 
 Below is a series of commands to run each application and its url
 
 | APPLICATION  | URL                                 | COMMAND           | PORT |
 | ------------ | ----------------------------------- | ----------------- | ---- |
-| GadgetZone  | http://localhost:3000/    | npm start | 3000 |
-| GadgetZone in live | https://gadget-zone-rene.vercel.app/   | - | - |
+| Backend| http://localhost:5000/    | npm start | 5000 |
+| Frontend | http://localhost:4200/   | ng serve | 4200 |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -57,7 +61,7 @@ Below is a series of commands to run each application and its url
 
 ## 📷 Images
 
-![image](https://github.com/ReneKubax/Gadget-Zone--Eccomerce/assets/97212849/0e448b05-6c4a-4ab6-9d41-81d2afbbef0a)
+![video](https://github.com/ReneKubax/Gadget-Zone--Eccomerce/assets/97212849/0e448b05-6c4a-4ab6-9d41-81d2afbbef0a)
 
 ![image](https://github.com/ReneKubax/Gadget-Zone--Eccomerce/assets/97212849/e154604b-365c-434d-a9c8-21caf96a117c)
 
@@ -135,6 +139,14 @@ Below is a series of commands to run each application and its url
 [Sass-url]: https://sass-lang.com/
 [Sass.io]: https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white
 [Jest-url]: https://jestjs.io/
+[Angular.io]: https://img.shields.io/badge/angular-%23DD0031.svg?style=for-the-badge&logo=angular&logoColor=white
+[Angular-url]: https://angular.io/
+[Node.js.io]: https://img.shields.io/badge/node.js-%2343853D.svg?style=for-the-badge&logo=node.js&logoColor=white
+[Node.js-url]: https://nodejs.org/
+[Express.io]: https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB
+[Express-url]: https://expressjs.com/
+[Firebase.io]: https://img.shields.io/badge/firebase-%23039BE5.svg?style=for-the-badge&logo=firebase
+[Firebase-url]: https://firebase.google.com/
 [Jest.io]: https://img.shields.io/badge/-jest-%23C21325?style=for-the-badge&logo=jest&logoColor=white
 [GithubActions-url]: https://github.com/features/actions
 [GithubActions.io]: https://img.shields.io/badge/github%20actions-%232671E5.svg?style=for-the-badge&logo=githubactions&logoColor=white
