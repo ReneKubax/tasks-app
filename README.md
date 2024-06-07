@@ -15,7 +15,7 @@ Full Stack App with Angular, Express and Firebase
 
 This project has been developed with the following technologies. Among them, they are categorized by Frameworks, Libraries, Testing Tools and Continuous Integration Tools, which are key to the operation of the project.
 
-### Libraries
+### Libraries and Tecnologies
 
 [![Angular][Angular.io]][Angular-url]
 [![Node.js][Node.js.io]][Node.js-url]
